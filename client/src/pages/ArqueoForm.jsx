@@ -155,15 +155,9 @@ function ArqueoForm() {
     longitud: "",
   });
 
-  // para traer la id
-
   const params = useParams();
-
   const naviage = useNavigate();
 
-
-
-  //para traer los datos que hay que editar
   useEffect(() => {
     const loadArqueos = async () => {
       if (params.id) {
@@ -339,23 +333,15 @@ function ArqueoForm() {
 
   return (
     <div className="max-w-full">
-      <Formik
-        initialValues={arqueo}
-        enableReinitialize={true}
-        useParams
-        onSubmit={async (values) => {
-          console.log(values);
-          naviage("/");
-        }}
-      >
+      <Formik initialValues={arqueo} enableReinitialize={true} useParams onSubmit={async (values) => { console.log(values); naviage("/"); }}      >
         {({ values }) => (
           <Form className="bg-white max-w-6xl rounded-md p-4 mx-auto mt-10">
+            <BottonExportItems datos={values} />
+
             <div className=" bg-blue-500 h-20  rounded-lg ">
               <h1 className="font-bold uppercase text-white text-2xl translate-y-5 translate-x-3">
                 arqueo
               </h1>
-
-              <BottonExportItems datos={arqueosData}  />
 
             </div>
 
