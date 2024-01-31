@@ -5,17 +5,19 @@ import logoImage from "../img/ganeJamundi.png";
 
 function Navbar() {
   return (
-    <div className=" bg-blue-700 flex justify-between  px-1 py-1  rounded-lg">
-      <Link to="/">
-        <img src={logoImage} alt="" className="w-30 h-20"/>
-      </Link>
+    <nav className="bg-blue-700 flex justify-around items-center py-2">
+      <ul className="flex items-center justify-center">
+        <Link to="/">
+          <img src={logoImage} width={110} alt="logo Servired" />
+        </Link>
+      </ul>
 
-      <ul className="flex gap-x-1 mt-5">
+      <ul className="flex">
         <li>
-          <Link to="/" className="bg-white px-2 py-1 mt-2 uppercase ">CERRAR</Link>
+          <Link to="/" className="bg-white  text-lg font-semibold p-2 px-4 rounded-md hover:bg-red-200">Cerrar</Link>
         </li>
       </ul>
-    </div>
+    </nav>
   );
 }
 

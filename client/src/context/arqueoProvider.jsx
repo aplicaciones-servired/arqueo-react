@@ -3,7 +3,6 @@ import { useState } from "react";
 import { getArqueosRequest, getArqueoRequest } from "../api/arqueo.api";
 import { ArqueoContext } from "../context/arqueoContext";
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useArqueo = () => {
   const contesxt = useContext(ArqueoContext);
   if (!contesxt) {
@@ -12,9 +11,7 @@ export const useArqueo = () => {
   return contesxt;
 };
 
-// eslint-disable-next-line react/prop-types
 export const ArqueoContextProvider = ({ children }) => {
-      // eslint-disable-next-line no-unused-vars
   const [arqueos, setArqueos] = useState([]);
 
   async function loadArqueos() {

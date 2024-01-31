@@ -18,7 +18,7 @@ function ArqueoCard({ arqueo }) {
     
     
     return (
-      <tr className="border border-slate-600">
+      <tr className="border border-slate-600 text-sm">
         <td className="border border-slate-600">{arqueo.supervisor}</td>
         <td className="border border-slate-600">{arqueo.nombres}</td>
         <td className="border border-slate-600">{arqueo.ip}</td>
@@ -35,7 +35,7 @@ function ArqueoCard({ arqueo }) {
 
         <td className="border border-slate-600">
           {firma_auditoria ? (
-            <img src={`data:image/png;base64,${firma_auditoria}`} className="w-30 h-20" alt="Firma Auditoria" />
+            <img src={`data:image/png;base64,${firma_auditoria}`} width={100} alt="Firma Auditoria" />
           ) : (
             "Arqueo sin imagen"
           )}
@@ -43,7 +43,7 @@ function ArqueoCard({ arqueo }) {
 
         <td className="border border-slate-600">
           {firma_colocadora ? (
-            <img src={`data:image/png;base64,${firma_colocadora}`} className="w-30 h-20" alt="Firma Colocadora" />
+            <img src={`data:image/png;base64,${firma_colocadora}`} width={100} alt="Firma Colocadora" />
           ) : (
             "Arqueo sin imagen"
           )}
