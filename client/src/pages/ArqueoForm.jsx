@@ -164,7 +164,6 @@ function ArqueoForm() {
         const arqueosData = await getArqueo(params.id);
         if (arqueosData && arqueosData.length > 0) {
           const primerArqueo = arqueosData[0];
-          console.log(primerArqueo);
           setArqueos({
             supervisor: primerArqueo.supervisor,
             nombres: primerArqueo.nombres,
@@ -332,24 +331,30 @@ function ArqueoForm() {
   }, []);
 
   return (
-    <div className="max-w-full">
-      <Formik initialValues={arqueo} enableReinitialize={true} useParams onSubmit={async (values) => { console.log(values); naviage("/"); }}      >
+    <div className="max-w-full bg-slate-100">
+      <Formik
+        initialValues={arqueo}
+        enableReinitialize={true}
+        useParams
+        onSubmit={async (values) => {
+          console.log(values);
+          naviage("/");
+        }}
+      >
         {({ values }) => (
           <Form className="bg-white max-w-6xl rounded-md p-4 mx-auto mt-10">
-            <BottonExportItems datos={values} />
-
             <div className=" bg-blue-500 h-20  rounded-lg ">
               <h1 className="font-bold uppercase text-white text-2xl translate-y-5 translate-x-3">
                 arqueo
               </h1>
-
+              <BottonExportItems datos={values} />
             </div>
 
             <label className="block text-center mt-5 uppercase">
               supervisor
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="supervisor"
               disabled
@@ -360,7 +365,7 @@ function ArqueoForm() {
               nombre supervisor
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="nombre_supervisor"
               disabled
@@ -371,7 +376,7 @@ function ArqueoForm() {
               documento
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="documento"
               disabled
@@ -380,7 +385,7 @@ function ArqueoForm() {
 
             <label className="block text-center mt-5 uppercase">ip</label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="ip"
               disabled
@@ -389,7 +394,7 @@ function ArqueoForm() {
 
             <label className="block text-center mt-5 uppercase">nombres</label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="nombres"
               disabled
@@ -400,7 +405,7 @@ function ArqueoForm() {
               sucursal{" "}
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="sucursal "
               disabled
@@ -411,7 +416,7 @@ function ArqueoForm() {
               punto de venta
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="puntodeventa"
               disabled
@@ -422,7 +427,7 @@ function ArqueoForm() {
               venta bruta
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="ventabruta"
               disabled
@@ -433,7 +438,7 @@ function ArqueoForm() {
               basee fectivo
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="baseefectivo"
               disabled
@@ -444,7 +449,7 @@ function ArqueoForm() {
               total ingreso
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="totalingreso"
               disabled
@@ -455,7 +460,7 @@ function ArqueoForm() {
               chances abonados
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="chancesabonados"
               disabled
@@ -466,7 +471,7 @@ function ArqueoForm() {
               chances preimpresos
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="chancespreimpresos "
               disabled
@@ -477,7 +482,7 @@ function ArqueoForm() {
               premios pagados
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="premiospagados"
               disabled
@@ -488,7 +493,7 @@ function ArqueoForm() {
               efectivo caja fuerte
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="efectivocajafuerte"
               disabled
@@ -499,7 +504,7 @@ function ArqueoForm() {
               total egresos
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="totalegresos"
               disabled
@@ -510,7 +515,7 @@ function ArqueoForm() {
               total billetes
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="totalbilletes"
               disabled
@@ -521,7 +526,7 @@ function ArqueoForm() {
               total monedas
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="totalmonedas"
               disabled
@@ -532,7 +537,7 @@ function ArqueoForm() {
               total arqueo
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="totalarqueo"
               disabled
@@ -543,7 +548,7 @@ function ArqueoForm() {
               sobran tefaltante
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="sobrantefaltante"
               disabled
@@ -554,7 +559,7 @@ function ArqueoForm() {
               cantidad billete cienmil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="canti_billete_cienmil"
               disabled
@@ -565,7 +570,7 @@ function ArqueoForm() {
               total billete cienmil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="total_billete_cienmil"
               disabled
@@ -576,7 +581,7 @@ function ArqueoForm() {
               canti billete cincuentamil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="canti_billete_cincuentamil"
               disabled
@@ -587,7 +592,7 @@ function ArqueoForm() {
               total billete cincuentamil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               name="total_billete_cincuentamil"
               disabled
@@ -598,7 +603,7 @@ function ArqueoForm() {
               cantidad billetes de veintemil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.canti_billete_veintemil}
@@ -609,7 +614,7 @@ function ArqueoForm() {
               total billetes de veintemil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.total_billete_veintemil}
@@ -620,7 +625,7 @@ function ArqueoForm() {
               cantidad billetes de diezmil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.canti_billete_diezmil}
@@ -631,7 +636,7 @@ function ArqueoForm() {
               total billetes de diezmil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.total_billete_diezmil}
@@ -642,7 +647,7 @@ function ArqueoForm() {
               cantidad billetes de cincomil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.canti_billete_cincomil}
@@ -653,7 +658,7 @@ function ArqueoForm() {
               total billetes de cincomil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.total_billete_cincomil}
@@ -664,7 +669,7 @@ function ArqueoForm() {
               cantidad billetes de dosmil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.canti_billete_dosmil}
@@ -675,7 +680,7 @@ function ArqueoForm() {
               total billete de dosmil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.total_billete_dosmil}
@@ -686,7 +691,7 @@ function ArqueoForm() {
               cantidad billetes de mil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.canti_billete_mil}
@@ -697,7 +702,7 @@ function ArqueoForm() {
               total billetes de mil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.total_billete_mil}
@@ -708,7 +713,7 @@ function ArqueoForm() {
               cantidad monedas de mil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.canti_moneda_mil}
@@ -719,7 +724,7 @@ function ArqueoForm() {
               total monedas de mil
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.total_moneda_mil}
@@ -730,7 +735,7 @@ function ArqueoForm() {
               cantidad monedasde quinientos
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.canti_moneda_quinientos}
@@ -741,7 +746,7 @@ function ArqueoForm() {
               total monedas de quinientos
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.total_moneda_quinientos}
@@ -752,7 +757,7 @@ function ArqueoForm() {
               cantidad monedas de docientos
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.canti_moneda_docientos}
@@ -763,7 +768,7 @@ function ArqueoForm() {
               total monedas de docientos
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.total_moneda_docientos}
@@ -774,7 +779,7 @@ function ArqueoForm() {
               cantidad monedas de cien
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.canti_moneda_cien}
@@ -785,7 +790,7 @@ function ArqueoForm() {
               total monedas de cien
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.total_moneda_cien}
@@ -796,7 +801,7 @@ function ArqueoForm() {
               canti monedas de cincuenta
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.canti_moneda_cincuenta}
@@ -807,7 +812,7 @@ function ArqueoForm() {
               total monedas de ciencuenta
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.total_moneda_ciencuenta}
@@ -818,7 +823,7 @@ function ArqueoForm() {
               total efectivo
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.total_efectivo}
@@ -829,7 +834,7 @@ function ArqueoForm() {
               total premioss de pagados
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.año_total_premios_pagadosla}
@@ -840,7 +845,7 @@ function ArqueoForm() {
               entrega colocador
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.entrega_colocador}
@@ -851,7 +856,7 @@ function ArqueoForm() {
               sobrante faltante de caja
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.sobrantefaltante_caja}
@@ -862,7 +867,7 @@ function ArqueoForm() {
               colocador caja fuerte
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.colocador_cajafuerte}
@@ -873,7 +878,7 @@ function ArqueoForm() {
               rollos bnet
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.rollos_bnet}
@@ -884,7 +889,7 @@ function ArqueoForm() {
               rollos fisicos
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.rollos_fisicos}
@@ -895,287 +900,383 @@ function ArqueoForm() {
               diferencia
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.diferencia}
               name="diferencia"
             />
 
-            <label className="block text-center mt-5 uppercase">
-              nombre del juego1{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.total_billete_cincomil}
-              name="total_billete_cincomil"
-            />
+            {values.nombre_juego && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  nombre del juego1{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.nombre_juego}
+                  name="nombre_juego"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad en bnet{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_bnet}
-              name="cantidad_bnet"
-            />
+            {values.cantidad_bnet && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad en bnet1{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_bnet}
+                  name="cantidad_bnet"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad en fisicos{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_fisicos}
-              name="cantidad_fisicos"
-            />
+            {values.cantidad_fisicos && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad en fisicos1{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_fisicos}
+                  name="cantidad_fisicos"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad faltante a descargar{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_faltante}
-              name="cantidad_faltante"
-            />
+            {values.cantidad_faltante && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad faltante a descargar1{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_faltante}
+                  name="cantidad_faltante"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              {" "}
-              valor del tiquete{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_tiquete}
-              name="cantidad_tiquete"
-            />
+            {values.cantidad_tiquete && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  {" "}
+                  valor del tiquete1{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_tiquete}
+                  name="cantidad_tiquete"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              valor descargado por juego{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.descargado}
-              name="descargado"
-            />
+            {values.descargado && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  valor descargado por juego1{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.descargado}
+                  name="descargado"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              nombre del juego2{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.nombre_juego2}
-              name="nombre_juego2"
-            />
+            {values.nombre_juego2 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  nombre del juego2{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.nombre_juego2}
+                  name="nombre_juego2"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad en bnet{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_bnet2}
-              name="cantidad_bnet2"
-            />
+            {values.cantidad_bnet2 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad en bnet2{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_bnet2}
+                  name="cantidad_bnet"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad en fisicos{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_fisicos2}
-              name="cantidad_fisicos2"
-            />
+            {values.cantidad_fisicos2 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad en fisicos2{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_fisicos2}
+                  name="cantidad_fisicos"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad faltante a descargar{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_faltante2}
-              name="cantidad_faltante2"
-            />
+            {values.cantidad_faltante2 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad faltante a descargar2{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_faltante2}
+                  name="cantidad_faltante"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              {" "}
-              valor del tiquete{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_tiquete2}
-              name="cantidad_tiquete2"
-            />
+            {values.cantidad_tiquete2 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  {" "}
+                  valor del tiquete2{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_tiquete2}
+                  name="cantidad_tiquete"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              valor descargado por juego{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.descargado2}
-              name="descargado2"
-            />
+            {values.descargado2 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  valor descargado por juego2{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.descargado2}
+                  name="descargado"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              nombre del juego3{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.nombre_juego3}
-              name="nombre_juego3"
-            />
+            {values.nombre_juego3 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  nombre del juego3{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.nombre_juego3}
+                  name="nombre_juego2"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad en bnet{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_bnet3}
-              name="cantidad_bnet3"
-            />
+            {values.cantidad_bnet3 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad en bnet3{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_bnet3}
+                  name="cantidad_bnet"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad en fisicos{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_fisicos3}
-              name="cantidad_fisicos3"
-            />
+            {values.cantidad_fisicos3 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad en fisicos3{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_fisicos3}
+                  name="cantidad_fisicos"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad faltante a descargar{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_faltante3}
-              name="cantidad_faltante3"
-            />
+            {values.cantidad_faltante3 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad faltante a descargar3{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_faltante3}
+                  name="cantidad_faltante"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              {" "}
-              valor del tiquete{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_tiquete3}
-              name="cantidad_tiquete3"
-            />
+            {values.cantidad_tiquete3 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  {" "}
+                  valor del tiquete3{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_tiquete3}
+                  name="cantidad_tiquete"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              valor descargado por juego{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.descargado3}
-              name="descargado3"
-            />
+            {values.descargado3 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  valor descargado por juego3{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.descargado3}
+                  name="descargado"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              nombre del juego3{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.nombre_juego4}
-              name="nombre_juego4"
-            />
+            {values.nombre_juego4 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  nombre del juego4{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.nombre_juego4}
+                  name="nombre_juego2"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad en bnet{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_bnet4}
-              name="cantidad_bnet4"
-            />
+            {values.cantidad_bnet4 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad en bnet4{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_bnet4}
+                  name="cantidad_bnet"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad en fisicos{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_fisicos4}
-              name="cantidad_fisicos4"
-            />
+            {values.cantidad_fisicos4 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad en fisicos4{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_fisicos4}
+                  name="cantidad_fisicos"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              cantidad faltante a descargar{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_faltante4}
-              name="cantidad_faltante4"
-            />
+            {values.cantidad_faltante4 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  cantidad faltante a descargar4{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_faltante4}
+                  name="cantidad_faltante"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              {" "}
-              valor del tiquete{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.cantidad_tiquete4}
-              name="cantidad_tiquete4"
-            />
+            {values.cantidad_tiquete3 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  {" "}
+                  valor del tiquete4{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.cantidad_tiquete3}
+                  name="cantidad_tiquete"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              valor descargado por juego{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.descargado4}
-              name="descargado4"
-            />
+            {values.descargado4 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  valor descargado por juego4{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.descargado4}
+                  name="descargado"
+                />
+              </>
+            )}
 
             <label className="block text-center mt-5 uppercase">
               {" "}
               total cantidad descargados{" "}
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.totaldescargados}
@@ -1186,663 +1287,905 @@ function ArqueoForm() {
               valor total descargado{" "}
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.totalvalor}
               name="totalvalor"
             />
 
-            <label className="block text-center mt-5 uppercase">
-              ¿El punto de venta tiene puertacerrada con candado y/o seguro?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito1}
-              name="requisito1"
-            />
+            {values.requisito1 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  ¿El punto de venta tiene puertacerrada con candado y/o seguro?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito1}
+                  name="requisito1"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion1}
-              name="observacion1"
-            />
+            {values.observacion1 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion1}
+                  name="observacion1"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿Tiene elementos de aseo, sillas en buen estado?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito2}
-              name="requisito2"
-            />
+            {values.requisito2 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  ¿Tiene elementos de aseo, sillas en buen estado?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito2}
+                  name="requisito2"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion2}
-              name="observacion2"
-            />
+            {values.observacion2 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion2}
+                  name="observacion2"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿Tiene aviso de videovigilancia y camaras?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito3}
-              name="requisito3"
-            />
+            {values.requisito3 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  ¿Tiene aviso de videovigilancia y camaras?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito3}
+                  name="requisito3"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion3}
-              name="observacion3"
-            />
+            {values.observacion3 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion3}
+                  name="observacion3"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿El Colocador cuenta con prendas emblematicas y presentación
-              adecuada?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito4}
-              name="requisito4"
-            />
+            {values.requisito4 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  ¿El Colocador cuenta con prendas emblematicas y presentación
+                  adecuada?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito4}
+                  name="requisito4"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion4}
-              name="observacion4"
-            />
+            {values.observacion4 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion4}
+                  name="observacion4"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿El usuario del colocador corresponde a la cedula del mismo?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito4}
-              name="requisito4"
-            />
+            {values.requisito5 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  ¿El usuario del colocador corresponde a la cedula del mismo?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito5}
+                  name="requisito4"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion5}
-              name="observacion5"
-            />
+            {values.observacion5 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion5}
+                  name="observacion5"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿La versión del aplicativo BNET esta actualizada?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito6}
-              name="requisito6"
-            />
+            {values.requisito6 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  ¿La versión del aplicativo BNET esta actualizada?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito6}
+                  name="requisito6"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion6}
-              name="observacion6"
-            />
+            {values.observacion6 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion6}
+                  name="observacion6"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿El colocador ofrece los productos y servicios comercializados por
-              la empresa al 100%?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito7}
-              name="requisito7"
-            />
+            {values.requisito7 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  ¿El colocador ofrece los productos y servicios comercializados
+                  por la empresa al 100%?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito7}
+                  name="requisito7"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion7}
-              name="observacion7"
-            />
+            {values.observacion7 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion7}
+                  name="observacion7"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿La publicidad exhibida en el punto de venta se encuentra
-              actualizada?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito8}
-              name="requisito8"
-            />
+            {values.requisito8 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  ¿La publicidad exhibida en el punto de venta se encuentra
+                  actualizada?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito8}
+                  name="requisito8"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion8}
-              name="observacion8"
-            />
+            {values.observacion8 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion8}
+                  name="observacion8"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿El colocador solicita el documento de identificación al cliente?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito9}
-              name="requisito9"
-            />
+            {values.requisito9 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿El colocador solicita el documento de identificación al
+                  cliente?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito9}
+                  name="requisito9"
+                />
+              </>
+            )}
+            {values.observacion9 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion9}
+                  name="observacion9"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion9}
-              name="observacion9"
-            />
+            {values.requisito10 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿El uso del sistema biométrico esta activo?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito10}
+                  name="requisito10"
+                />
+              </>
+            )}
+            {values.observacion10 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion10}
+                  name="observacion10"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿El uso del sistema biométrico esta activo?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito10}
-              name="requisito10"
-            />
+            {values.requisito11 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿El colocador conoce de Supervoucher, y esta en
+                  funcionamiento?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito11}
+                  name="requisito11"
+                />
+              </>
+            )}
+            {values.observacion11 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito11}
+                  name="observacion11"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion10}
-              name="observacion10"
-            />
+            {values.requisito12 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿El Colocador conoce el procedimiento que debe realizar a
+                  remitentes y destinatarios menores de edad?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito12}
+                  name="requisito12"
+                />
+              </>
+            )}
+            {values.observacion12 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion12}
+                  name="observacion12"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿El colocador conoce de Supervoucher, y esta en funcionamiento?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito11}
-              name="requisito11"
-            />
+            {values.requisito13 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿El colocador conoce los reportes de operaciones en efectivo
+                  (R.O.E) firmas, huellas. (Transacciones &gt;=$10.000.000)?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito13}
+                  name="requisito13"
+                />
+              </>
+            )}
+            {values.observacion9 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion13}
+                  name="observacion13"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito11}
-              name="observacion11"
-            />
+            {values.requisito14 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿Tiene aviso externo que indica Vigilado y Controlado Mintic y
+                  Colaborador Autorizado?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito14}
+                  name="requisito14"
+                />
+              </>
+            )}
+            {values.observacion14 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion14}
+                  name="observacion14"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿El Colocador conoce el procedimiento que debe realizar a
-              remitentes y destinatarios menores de edad?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito12}
-              name="requisito12"
-            />
+            {values.requisito15 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿Tiene cuadro Banner con la marca SuperGIROS (aviso de canales
+                  de comunicación)?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito15}
+                  name="requisito15"
+                />
+              </>
+            )}
+            {values.observacion15 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito15}
+                  name="observacion15"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion12}
-              name="observacion12"
-            />
+            {values.requisito16 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿Tiene afiche normativo visible o tarifario con las
+                  condiciones del servicio?{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito16}
+                  name="requisito16"
+                />
+              </>
+            )}
+            {values.observacion16 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion16}
+                  name="observacion16"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿El colocador conoce los reportes de operaciones en efectivo
-              (R.O.E) firmas, huellas. (Transacciones &gt;=$10.000.000)?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito13}
-              name="requisito13"
-            />
+            {values.requisito17 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿Cuenta con sticker tirilla electronica CRC ?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito17}
+                  name="requisito17"
+                />
+              </>
+            )}
+            {values.observacion17 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion17}
+                  name="observacion17"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion13}
-              name="observacion13"
-            />
+            {values.requisito18 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿Tiene normativa Giros Internacionales, camara o lector five y
+                  Sticker de pagos internacionales?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito18}
+                  name="requisito18"
+                />
+              </>
+            )}
+            {values.observacion18 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion18}
+                  name="observacion18"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿Tiene aviso externo que indica Vigilado y Controlado Mintic y
-              Colaborador Autorizado?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito14}
-              name="requisito14"
-            />
+            {values.requisito19 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿El Supervisor Comercial realiza las visitas constantemente,
+                  da buen trato y suministra los insumos a tiempo? Cantidad de
+                  visitas del Supervisor Comercial al mes?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito19}
+                  name="requisito19"
+                />
+              </>
+            )}
+            {values.observacion19 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion19}
+                  name="observacion19"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion14}
-              name="observacion14"
-            />
+            {values.requisito20 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿Las recargas efectuadas por el Colocador se trasmiten a
+                  través de la red propia de la empresa?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito20}
+                  name="requisito20"
+                />
+              </>
+            )}
+            {values.observacion20 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion20}
+                  name="observacion20"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿Tiene cuadro Banner con la marca SuperGIROS (aviso de canales de
-              comunicación)?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito15}
-              name="requisito15"
-            />
+            {values.requisito21 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿La lotería física tiene impreso el nombre de la empresa, de
+                  no ser asi reportar inmediatamente?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito21}
+                  name="requisito21"
+                />
+              </>
+            )}
+            {values.observacion21 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion21}
+                  name="observacion21"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito15}
-              name="observacion15"
-            />
+            {values.requisito22 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿El punto de venta tiene caja fuerte y caja digital? el
+                  responsable tiene conocimiento sobre las bases de efectivo
+                  asignadas para caja auxiliar y caja digital?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito22}
+                  name="requisito22"
+                />
+              </>
+            )}
+            {values.observacion22 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion22}
+                  name="observacion22"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿Tiene afiche normativo visible o tarifario con las condiciones
-              del servicio?{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito16}
-              name="requisito16"
-            />
+            {values.requisito23 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿Se cumple con los topes de efectivo establecidos para la caja
+                  digital y caja auxiliar (ptos de venta con giros)?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito23}
+                  name="requisito23"
+                />
+              </>
+            )}
+            {values.observacion23 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion23}
+                  name="observacion23"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion16}
-              name="observacion16"
-            />
+            {values.requisito24 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿El colocador tiene conocimiento sobre los montos máximos para
+                  pago de premios?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito24}
+                  name="requisito24"
+                />
+              </>
+            )}
+            {values.observacion24 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion24}
+                  name="observacion24"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿Cuenta con sticker tirilla electronica CRC ?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito17}
-              name="requisito17"
-            />
+            {values.requisito25 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿El colocador conoce los requisitos para pago de premios?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito25}
+                  name="requisito25"
+                />
+              </>
+            )}
+            {values.observacion25 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion25}
+                  name="observacion25"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion17}
-              name="observacion17"
-            />
+            {values.requisito26 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿Tiene buzon de PQR, formato de gane y de giros?{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito26}
+                  name="requisito26"
+                />
+              </>
+            )}
+            {values.observacion26 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion26}
+                  name="observacion26"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿Tiene normativa Giros Internacionales, camara o lector five y
-              Sticker de pagos internacionales?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito18}
-              name="requisito18"
-            />
+            {values.requisito27 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿El Colocador cuenta con las bases acerca del SARL, SARLAFT,
+                  SARO?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito27}
+                  name="requisito27"
+                />
+              </>
+            )}
+            {values.observacion27 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  observacion{" "}
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.observacion27}
+                  name="observacion27"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion18}
-              name="observacion18"
-            />
+            {values.requisito28 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿El Colocador conoce la definición de operación inusual y
+                  operación sospechosa?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito28}
+                  name="requisito28"
+                />
+              </>
+            )}
+            {values.requisito29 && (
+              <>
+                <label className="block text-center mt-5 uppercase">
+                  VERIFICACION INSUMOS PARA PREVENCION DE COVID 19
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito29}
+                  name="requisito29"
+                />
+              </>
+            )}
 
-            <label className="block text-center mt-5 uppercase">
-              ¿El Supervisor Comercial realiza las visitas constantemente, da
-              buen trato y suministra los insumos a tiempo? Cantidad de visitas
-              del Supervisor Comercial al mes?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito19}
-              name="requisito19"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion19}
-              name="observacion19"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              ¿Las recargas efectuadas por el Colocador se trasmiten a través de
-              la red propia de la empresa?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito20}
-              name="requisito20"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion20}
-              name="observacion20"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              ¿La lotería física tiene impreso el nombre de la empresa, de no
-              ser asi reportar inmediatamente?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito21}
-              name="requisito21"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion21}
-              name="observacion21"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              ¿El punto de venta tiene caja fuerte y caja digital? el
-              responsable tiene conocimiento sobre las bases de efectivo
-              asignadas para caja auxiliar y caja digital?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito22}
-              name="requisito22"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion22}
-              name="observacion22"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              ¿Se cumple con los topes de efectivo establecidos para la caja
-              digital y caja auxiliar (ptos de venta con giros)?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito23}
-              name="requisito23"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion23}
-              name="observacion23"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              ¿El colocador tiene conocimiento sobre los montos máximos para
-              pago de premios?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito24}
-              name="requisito24"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion24}
-              name="observacion24"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              ¿El colocador conoce los requisitos para pago de premios?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito25}
-              name="requisito25"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion25}
-              name="observacion25"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              ¿Tiene buzon de PQR, formato de gane y de giros?{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito26}
-              name="requisito26"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion26}
-              name="observacion26"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              ¿El Colocador cuenta con las bases acerca del SARL, SARLAFT, SARO?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito27}
-              name="requisito27"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              observacion{" "}
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.observacion27}
-              name="observacion27"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              ¿El Colocador conoce la definición de operación inusual y
-              operación sospechosa?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito28}
-              name="requisito28"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              VERIFICACION INSUMOS PARA PREVENCION DE COVID 19
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito29}
-              name="requisito29"
-            />
-
-            <label className="block text-center mt-5 uppercase">
-              ¿Tapabocas?
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.requisito30}
-              name="requisito30"
-            />
+            {values.requisito30 && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  ¿Tapabocas?
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.requisito30}
+                  name="requisito30"
+                />
+              </>
+            )}
 
             <label className="block text-center mt-5 uppercase">
               fecha visita
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.fechavisita}
@@ -1853,7 +2196,7 @@ function ArqueoForm() {
               hora visita
             </label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.horavisita}
@@ -1862,7 +2205,7 @@ function ArqueoForm() {
 
             <label className="block text-center mt-5 uppercase">latitud</label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.latitud}
@@ -1871,7 +2214,7 @@ function ArqueoForm() {
 
             <label className="block text-center mt-5 uppercase">longitud</label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.longitud}
@@ -1880,44 +2223,72 @@ function ArqueoForm() {
 
             <label className="block text-center mt-5 uppercase">longitud</label>
             <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
+              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
               type="text"
               disabled
               defaultValue={values.longitud}
               name="longitud"
             />
 
-            <label className="block text-center mt-5 uppercase">
-              nombre de la observacion
-            </label>
-            <input
-              className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border "
-              type="text"
-              disabled
-              defaultValue={values.nombre_observacion}
-              name="nombre_observacion"
-            />
+            {values.nombre_observacion && (
+              <>
+                {" "}
+                <label className="block text-center mt-5 uppercase">
+                  nombre de la observacion
+                </label>
+                <input
+                  className="px-2 py-1 w-full text-center mt-2 bg-slate-300 rounded-full border cursor-not-allowed"
+                  type="text"
+                  disabled
+                  defaultValue={values.nombre_observacion}
+                  name="nombre_observacion"
+                />
+              </>
+            )}
 
-            <h4 className="block  mt-5 uppercase">imagen observacion</h4>
-            <img
-              src={`data:image/png;base64,${values.imagen_observacion}`}
-              className="w-30 h-20"
-              name="imagen_observacion"
-            />
+            <div className="flex justify-between mt-5">
+              <div className="text-center">
+                {values.imagen_observacion && (
+                  <>
+                    {" "}
+                    <h4 className="block uppercase">Imagen Observación</h4>
+                    <img
+                      src={`data:image/png;base64,${values.imagen_observacion}`}
+                      className="w-96 h-max mt-2"
+                      name="imagen_observacion"
+                    />
+                  </>
+                )}
+              </div>
 
-            <h4 className="block  mt-5 uppercase">Firma Auditor</h4>
-            <img
-              src={`data:image/png;base64,${values.firma_auditoria}`}
-              className="w-30 h-20"
-              name="firma_auditoria"
-            />
+              <div className="text-center ml-5">
+                {values.firma_auditoria && (
+                  <>
+                    {" "}
+                    <h4 className="block uppercase">Firma Auditor</h4>
+                    <img
+                      src={`data:image/png;base64,${values.firma_auditoria}`}
+                      className="w-30 h-20 mt-2"
+                      name="firma_auditoria"
+                    />
+                  </>
+                )}
+              </div>
 
-            <h4 className="block  mt-5 uppercase">firma_colocadora</h4>
-            <img
-              src={`data:image/png;base64,${values.firma_colocadora}`}
-              className="w-30 h-20"
-              name="firma_colocadora"
-            />
+              <div className="text-center ml-5">
+                {values.firma_auditoria && (
+                  <>
+                    {" "}
+                    <h4 className="block uppercase">Firma Colocadora</h4>
+                    <img
+                      src={`data:image/png;base64,${values.firma_colocadora}`}
+                      className="w-30 h-20 mt-2"
+                      name="firma_colocadora"
+                    />
+                  </>
+                )}
+              </div>
+            </div>
           </Form>
         )}
       </Formik>

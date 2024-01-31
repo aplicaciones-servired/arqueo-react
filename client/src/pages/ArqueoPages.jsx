@@ -13,7 +13,7 @@ function ArqueoPages() {
   }, []);
 
   function renderMain() {
-    if (arqueos.length === 0) return <h1>No hay arqueos</h1>;
+  
 
     const offset = currentPage * itemsPerPage;
     const currentPageItems = arqueos
@@ -21,8 +21,8 @@ function ArqueoPages() {
       .map((arqueo) => <ArqueoCard arqueo={arqueo} key={arqueo.id} />);
 
     return (
-      <section className="w-full flex flex-col">
-        <table className="text-center ">
+      <section className="rounded-lg w-full flex flex-col">
+        <table className="text-center mt-5">
           <thead className="bg-blue-500 text-sm">
             <tr className="border border-slate-600">
               <th className="border border-slate-600">Supervisor</th>

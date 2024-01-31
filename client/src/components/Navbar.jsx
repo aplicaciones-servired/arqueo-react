@@ -5,7 +5,7 @@ import logoImage from "../img/ganeJamundi.png";
 
 function Navbar() {
   return (
-    <nav className="bg-blue-700 flex justify-around items-center py-2">
+    <nav className="bg-blue-700 flex justify-around items-center py-2 rounded-lg">
       <ul className="flex items-center justify-center">
         <Link to="/">
           <img src={logoImage} width={110} alt="logo Servired" />
