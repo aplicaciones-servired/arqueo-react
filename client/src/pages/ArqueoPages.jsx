@@ -21,9 +21,9 @@ function ArqueoPages() {
       .map((arqueo) => <ArqueoCard arqueo={arqueo} key={arqueo.id} />);
 
     return (
-      <div>
-        <table className="border-collapse border border-slate-500 text-center mt-9 ">
-          <thead>
+      <section className="w-full flex flex-col">
+        <table className="text-center ">
+          <thead className="bg-blue-500 text-sm">
             <tr className="border border-slate-600">
               <th className="border border-slate-600">Supervisor</th>
               <th className="border border-slate-600">Nombre Completo</th>
@@ -36,17 +36,14 @@ function ArqueoPages() {
               <th className="border border-slate-600">Total Ingreso</th>
               <th className="border border-slate-600">Fecha Visita</th>
               <th className="border border-slate-600">Hora Visita</th>
-
               <th className="border border-slate-600">Firma Auditor</th>
               <th className="border border-slate-600">Firma Colocadora</th>
+              <th className="border border-slate-600">Opc</th>
             </tr>
           </thead>
           <tbody>{currentPageItems}</tbody>
         </table>
-        <ReactPaginate
-          previousLabel={"Anterior"}
-          nextLabel={"Siguiente"}
-          pageCount={Math.ceil(arqueos.length / itemsPerPage)}
+        <ReactPaginate previousLabel={"Anterior"} nextLabel={"Siguiente"} pageCount={Math.ceil(arqueos.length / itemsPerPage)} 
           onPageChange={({ selected }) => setCurrentPage(selected)}
           containerClassName={"flex items-center justify-center mt-4 space-x-2"} // Estilos de contenedor
           pageClassName={"bg-gray-400 px-3 py-2 rounded-full"} // Estilos de cada página
@@ -55,16 +52,15 @@ function ArqueoPages() {
           nextClassName={"bg-blue-500 text-white px-3 py-2 rounded-full"} // Estilos del botón Siguiente
           activeClassName={"bg-blue-700 text-white"} // Estilos de la página activa
         />
-      </div>
+      </section>
     );
   }
 
   return (
-    <div>
+    <section>
       <h1 className="text-center font-bold uppercase mt-9">arqueos</h1>
-
       {renderMain()}
-    </div>
+    </section>
   );
 }
 
