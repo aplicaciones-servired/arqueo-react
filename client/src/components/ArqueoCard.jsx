@@ -19,6 +19,7 @@ function ArqueoCard({ arqueo }) {
       Buffer.from(arqueo.firma_colocadora.data).toString("base64");
 
     return (
+      
       <tr className="border border-slate-600 text-sm">
         <td className="border border-slate-600">{arqueo.supervisor}</td>
         <td className="border border-slate-600">{arqueo.nombres}</td>

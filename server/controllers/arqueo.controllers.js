@@ -14,17 +14,6 @@ export const getArqueos = async (req, res) => {
   }
 };
 
-// export const updateArqueo = async (req, res) => {
-//   try {
-//     const result = await pool.query(
-//       "UPDATE registro_arqueo_servired SET ? WHERE id = ?",
-//       [req.body, req.params.id]
-//     );
-//     res.json(result);
-//   } catch (error) {
-//     return res.status(500).json({ message: error.message });
-//   }
-// };
 
 //traer una tarea
 export const getArqueo = async (req, res) => {
@@ -54,3 +43,4 @@ export const getArqueo = async (req, res) => {
     return res.status(500).json({ message: error.message });
   }
 };
+

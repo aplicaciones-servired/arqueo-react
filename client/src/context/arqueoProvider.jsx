@@ -29,6 +29,9 @@ export const ArqueoContextProvider = ({ children }) => {
       }
     };
 
+
+
+
   return (
     <ArqueoContext.Provider value={{ arqueos, loadArqueos, getArqueo }}>
       {children}

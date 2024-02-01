@@ -1,7 +1,7 @@
 import * as XLSX from "xlsx";
 // eslint-disable-next-line react/prop-types
 export const BottonExportItems = ({ datos }) => {
-  const titulo = [{ A: "Reporte de Items" }, {}];
+  const titulo = [{ A: "Reporte de arqueo" }, {}];
   const hora = new Date();
   const infoCreacción = { A: `Fecha De Creación ${hora}` };
   const longitudes = [25, 25, 20, 10, 10, 10, 35];

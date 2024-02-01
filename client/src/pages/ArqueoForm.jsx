@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { Form, Formik } from "formik";
 import { useArqueo } from "../context/arqueoProvider";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Buffer } from "buffer";
 import { BottonExportItems } from "../components/XportExcel.jsx";
@@ -156,11 +156,11 @@ function ArqueoForm() {
   });
 
   const params = useParams();
-  const naviage = useNavigate();
+ 
 
   useEffect(() => {
     const loadArqueos = async () => {
-      if (params.id) {
+      if (params.id) { 
         const arqueosData = await getArqueo(params.id);
         if (arqueosData && arqueosData.length > 0) {
           const primerArqueo = arqueosData[0];
@@ -336,10 +336,6 @@ function ArqueoForm() {
         initialValues={arqueo}
         enableReinitialize={true}
         useParams
-        onSubmit={async (values) => {
-          console.log(values);
-          naviage("/");
-        }}
       >
         {({ values }) => (
           <Form className="bg-white max-w-6xl rounded-md p-4 mx-auto mt-10">

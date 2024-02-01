@@ -10,3 +10,4 @@ export const getArqueoRequest = async (id) =>
 
 export const updateArqueoRequest = async (id, newFields) =>
   await axios.put(`http://localhost:4000/arqueos/${id}`, newFields);
+

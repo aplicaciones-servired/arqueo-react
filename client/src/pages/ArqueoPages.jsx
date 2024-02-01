@@ -6,6 +6,8 @@ import ReactPaginate from "react-paginate";
 function ArqueoPages() {
   const { arqueos, loadArqueos } = useArqueo();
   const [currentPage, setCurrentPage] = useState(0);
+  const [busqueda, setBusqueda] = useState("");
+  const [resultadosBusqueda, setResultadosBusqueda] = useState([]);
   const itemsPerPage = 10;
 
   useEffect(() => {
@@ -13,10 +15,8 @@ function ArqueoPages() {
   }, []);
 
   function renderMain() {
-  
-
     const offset = currentPage * itemsPerPage;
-    const currentPageItems = arqueos
+    const currentPageItems = (resultadosBusqueda.length > 0 ? resultadosBusqueda : arqueos)
       .slice(offset, offset + itemsPerPage)
       .map((arqueo) => <ArqueoCard arqueo={arqueo} key={arqueo.id} />);
 
@@ -43,7 +43,10 @@ function ArqueoPages() {
           </thead>
           <tbody>{currentPageItems}</tbody>
         </table>
-        <ReactPaginate previousLabel={"Anterior"} nextLabel={"Siguiente"} pageCount={Math.ceil(arqueos.length / itemsPerPage)} 
+        <ReactPaginate
+          previousLabel={"Anterior"}
+          nextLabel={"Siguiente"}
+          pageCount={Math.ceil(arqueos.length / itemsPerPage)}
           onPageChange={({ selected }) => setCurrentPage(selected)}
           containerClassName={"flex items-center justify-center mt-4 space-x-2"} // Estilos de contenedor
           pageClassName={"bg-gray-400 px-3 py-2 rounded-full"} // Estilos de cada página
@@ -56,8 +59,29 @@ function ArqueoPages() {
     );
   }
 
+   const handleChange = (e) => {
+    const terminoBusqueda = e.target.value;
+    setBusqueda(terminoBusqueda);
+
+    // Filtrar arqueos y almacenar los resultados en el estado de resultadosBusqueda
+    const resultados = arqueos.filter((arqueo) => 
+      arqueo.fechavisita.toString().toLowerCase().includes(terminoBusqueda)
+    );
+    setResultadosBusqueda(resultados);
+  };
+
   return (
     <section>
+      <div className="flex justify-end translate-y-16 -translate-x-8 ">
+        <input
+          type="date"
+          className="p-1 rounded-lg border-4 border-blue-500"
+          value={busqueda}
+          placeholder="Búsqueda por Nombre o Empresa"
+          onChange={handleChange}
+        />
+      </div>
+
       <h1 className="text-center font-bold uppercase mt-9">arqueos</h1>
       {renderMain()}
     </section>
