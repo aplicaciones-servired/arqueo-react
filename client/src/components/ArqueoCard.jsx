@@ -1,8 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useArqueo } from "../context/arqueoProvider";
 import { Buffer } from "buffer";
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import { SlMagnifier } from "react-icons/sl";
 
@@ -22,6 +21,7 @@ function ArqueoCard({ arqueo }) {
       
       <tr className="border border-slate-600 text-sm">
         <td className="border border-slate-600">{arqueo.supervisor}</td>
+        <td className="border border-slate-600">{arqueo.nombre_supervisor}</td>
         <td className="border border-slate-600">{arqueo.nombres}</td>
         <td className="border border-slate-600">{arqueo.ip}</td>
         <td className="border border-slate-600">{arqueo.documento}</td>

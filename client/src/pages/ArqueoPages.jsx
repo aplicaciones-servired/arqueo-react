@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ArqueoCard from "../components/ArqueoCard";
 import { useArqueo } from "../context/arqueoProvider";
 import ReactPaginate from "react-paginate";
+ import { BottonExportItems } from "../components/ExportFechaExcel";
 
 function ArqueoPages() {
   const { arqueos, loadArqueos } = useArqueo();
@@ -10,22 +11,24 @@ function ArqueoPages() {
   const [resultadosBusqueda, setResultadosBusqueda] = useState([]);
   const itemsPerPage = 10;
 
+
   useEffect(() => {
     loadArqueos();
-  }, []);
-
+  }, [loadArqueos]);
   function renderMain() {
     const offset = currentPage * itemsPerPage;
     const currentPageItems = (resultadosBusqueda.length > 0 ? resultadosBusqueda : arqueos)
       .slice(offset, offset + itemsPerPage)
       .map((arqueo) => <ArqueoCard arqueo={arqueo} key={arqueo.id} />);
 
+      
     return (
-      <section className="rounded-lg w-full flex flex-col">
-        <table className="text-center mt-5">
+      <section className="rounded-lg w-full flex flex-col mt-24">
+        <table className="text-center -mt-16">
           <thead className="bg-blue-500 text-sm">
             <tr className="border border-slate-600">
               <th className="border border-slate-600">Supervisor</th>
+              <th className="border border-slate-600">Nombre Supervisor</th>
               <th className="border border-slate-600">Nombre Completo</th>
               <th className="border border-slate-600">IP</th>
               <th className="border border-slate-600">Documento</th>
@@ -38,7 +41,7 @@ function ArqueoPages() {
               <th className="border border-slate-600">Hora Visita</th>
               <th className="border border-slate-600">Firma Auditor</th>
               <th className="border border-slate-600">Firma Colocadora</th>
-              <th className="border border-slate-600">Opc</th>
+              <th className="border border-slate-600">ver</th>
             </tr>
           </thead>
           <tbody>{currentPageItems}</tbody>
@@ -69,20 +72,23 @@ function ArqueoPages() {
     );
     setResultadosBusqueda(resultados);
   };
-
+  
   return (
     <section>
-      <div className="flex justify-end translate-y-16 -translate-x-8 ">
+     <h1 className="flex justify-end translate-y-3 -translate-x-8 text-center font-bold uppercase mt-3">busqueda por fecha</h1>
+      <div className="flex justify-end translate-y-3 -translate-x-8 ">
         <input
           type="date"
           className="p-1 rounded-lg border-4 border-blue-500"
           value={busqueda}
-          placeholder="Búsqueda por Nombre o Empresa"
           onChange={handleChange}
         />
       </div>
+  
+        {console.log(arqueos)}
+      
+        <BottonExportItems datos={arqueos} />
 
-      <h1 className="text-center font-bold uppercase mt-9">arqueos</h1>
       {renderMain()}
     </section>
   );

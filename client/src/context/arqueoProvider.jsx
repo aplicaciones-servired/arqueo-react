@@ -3,6 +3,7 @@ import { useState } from "react";
 import { getArqueosRequest, getArqueoRequest } from "../api/arqueo.api";
 import { ArqueoContext } from "../context/arqueoContext";
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useArqueo = () => {
   const contesxt = useContext(ArqueoContext);
   if (!contesxt) {
