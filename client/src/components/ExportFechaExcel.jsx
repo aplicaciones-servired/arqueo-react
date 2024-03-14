@@ -1,7 +1,6 @@
 import * as XLSX from "xlsx";
 // eslint-disable-next-line react/prop-types
 export const BottonExportItems = ({ datos }) => {
-  console.log("datos :>> ", datos);
   const titulo = [{ A: "Reporte de arqueo" }, {}];
   const hora = new Date();
   const infoCreacción = { A: `Fecha De Creación ${hora}` };
@@ -322,7 +321,7 @@ export const BottonExportItems = ({ datos }) => {
   };
 
   return (
-    <div className="flex justify-start -translate-y-7 translate-x-10">
+    <div className="flex justify-end translate-y-3 -translate-x-8 text-center font-bold uppercase mt-3">
       <button
         type="button"
         onClick={handleDownload}

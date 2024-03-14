@@ -84,9 +84,7 @@ function ArqueoPages() {
           onChange={handleChange}
         />
       </div>
-  
-        {console.log(arqueos)}
-      
+
         <BottonExportItems datos={arqueos} />
 
       {renderMain()}
