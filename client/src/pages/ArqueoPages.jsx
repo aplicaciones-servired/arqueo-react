@@ -14,7 +14,7 @@ function ArqueoPages() {
 
   useEffect(() => {
     loadArqueos();
-  }, [loadArqueos]);
+  }, []);
   function renderMain() {
     const offset = currentPage * itemsPerPage;
     const currentPageItems = (resultadosBusqueda.length > 0 ? resultadosBusqueda : arqueos)
@@ -75,14 +75,16 @@ function ArqueoPages() {
   
   return (
     <section>
-     <h1 className="flex justify-end translate-y-3 -translate-x-8 text-center font-bold uppercase mt-3">busqueda por fecha</h1>
-      <div className="flex justify-end translate-y-3 -translate-x-8 ">
+     <h1 className="flex  translate-y-3 translate-x-12 text-center font-bold uppercase mt-3">busqueda por fecha</h1>
+      <div className="flex justify-normal translate-y-3 translate-x-12 ">
         <input
           type="date"
           className="p-1 rounded-lg border-4 border-blue-500"
           value={busqueda}
           onChange={handleChange}
+          
         />
+        
       </div>
 
         <BottonExportItems datos={arqueos} />

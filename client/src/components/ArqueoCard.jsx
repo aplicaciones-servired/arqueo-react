@@ -1,14 +1,11 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable react/prop-types */
 import { Buffer } from "buffer";
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import { SlMagnifier } from "react-icons/sl";
 
 function ArqueoCard({ arqueo }) {
   const navigate = useNavigate();
   try {
-    //para mostrar las imagenes
+    // Para mostrar las imágenes
     const firma_auditoria =
       arqueo.firma_auditoria &&
       Buffer.from(arqueo.firma_auditoria.data).toString("base64");
@@ -17,8 +14,13 @@ function ArqueoCard({ arqueo }) {
       arqueo.firma_colocadora &&
       Buffer.from(arqueo.firma_colocadora.data).toString("base64");
 
+    // Función para obtener solo la fecha
+    const getFormattedDate = (dateString) => {
+      const date = new Date(dateString);
+      return date.toLocaleDateString();
+    };
+
     return (
-      
       <tr className="border border-slate-600 text-sm">
         <td className="border border-slate-600">{arqueo.supervisor}</td>
         <td className="border border-slate-600">{arqueo.nombre_supervisor}</td>
@@ -32,7 +34,11 @@ function ArqueoCard({ arqueo }) {
         <td className="border border-slate-600">{arqueo.baseefectivo}</td>
         <td className="border border-slate-600">{arqueo.totalingreso}</td>
 
-        <td className="border border-slate-600">{arqueo.fechavisita}</td>
+        <td className="border border-slate-600">
+          {arqueo.fechavisita && (
+            <span>{getFormattedDate(arqueo.fechavisita)}</span>
+          )}
+        </td>
         <td className="border border-slate-600">{arqueo.horavisita}</td>
 
         <td className="border border-slate-600">
@@ -43,7 +49,7 @@ function ArqueoCard({ arqueo }) {
               alt="Firma Auditoria"
             />
           ) : (
-            "Arqueo sin imagen"
+            "Arqueo sin firma"
           )}
         </td>
 
@@ -55,7 +61,7 @@ function ArqueoCard({ arqueo }) {
               alt="Firma Colocadora"
             />
           ) : (
-            "Arqueo sin imagen"
+            "Arqueo sin firma"
           )}
         </td>
 
@@ -72,8 +78,8 @@ function ArqueoCard({ arqueo }) {
     );
   } catch (error) {
     console.log(error);
+    return null; // Devolver null si hay un error
   }
 }
-
 
 export default ArqueoCard;

@@ -321,7 +321,7 @@ export const BottonExportItems = ({ datos }) => {
   };
 
   return (
-    <div className="flex justify-end translate-y-3 -translate-x-8 text-center font-bold uppercase mt-3">
+    <div className="flex translate-y-4 translate-x-12 text-center font-bold uppercase mt-3">
       <button
         type="button"
         onClick={handleDownload}

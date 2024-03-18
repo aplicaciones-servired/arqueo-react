@@ -328,7 +328,7 @@ function ArqueoForm() {
       }
     };
     loadArqueos();
-  }, []);
+  }, [getArqueo, params.id]);
 
   return (
     <div className="max-w-full bg-slate-100">

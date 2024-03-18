@@ -20,6 +20,7 @@ export const ArqueoContextProvider = ({ children }) => {
     setArqueos(response.data);
   }
 
+
     const getArqueo = async (id) => {
       try {
         const response = await getArqueoRequest(id)
