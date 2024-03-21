@@ -16,7 +16,7 @@ function ArqueoPages() {
 
   useEffect(() => {
     loadArqueos();
-  }, []);
+  }, [loadArqueos]);
 
   const exportarRegistros = () => {
     // Verificar que las fechas de inicio y fin estén definidas
