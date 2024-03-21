@@ -156,11 +156,10 @@ function ArqueoForm() {
   });
 
   const params = useParams();
- 
 
   useEffect(() => {
     const loadArqueos = async () => {
-      if (params.id) { 
+      if (params.id) {
         const arqueosData = await getArqueo(params.id);
         if (arqueosData && arqueosData.length > 0) {
           const primerArqueo = arqueosData[0];
@@ -332,11 +331,7 @@ function ArqueoForm() {
 
   return (
     <div className="max-w-full bg-slate-100">
-      <Formik
-        initialValues={arqueo}
-        enableReinitialize={true}
-        useParams
-      >
+      <Formik initialValues={arqueo} enableReinitialize={true} useParams>
         {({ values }) => (
           <Form className="bg-white max-w-6xl rounded-md p-4 mx-auto mt-10">
             <div className=" bg-blue-500 h-20  rounded-lg ">
