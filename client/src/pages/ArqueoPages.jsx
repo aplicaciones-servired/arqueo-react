@@ -21,7 +21,7 @@ function ArqueoPages() {
   const exportarRegistros = () => {
     // Verificar que las fechas de inicio y fin estén definidas
     if (!fechaInicio || !fechaFin) {
-      console.error("Fechas de inicio y fin deben ser seleccionadas");
+      alert("Fechas de inicio y fin deben ser seleccionadas");
       return;
     }
 
